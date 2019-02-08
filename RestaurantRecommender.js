@@ -222,16 +222,26 @@ class RestaurantRecommender {
 
 
 //
-// jQuery
+// jQuery // NOTE: MOVED TO SEPARATE FILE YAY (jquery.js)
 //
 /*
 $(document).ready(function() {
     // jQuery code goes here
-    $("button").click(function() {
+    $(".button-info").click(function() {
         $(".print-info").text(""); // clears text before appending
         $(".print-info").append(restaurantRecommender.printHTML()); // appending may be redundant but worry about this later
+    });
+    $(".button-recommend").click(function() {
+        $(".print-recommend").text(""); // clears text before appending
+        $(".print-recommend").append(restaurantRecommender.suggestedRestaurants(3, 'mexican')[0].name); // appending may be redundant but worry about this later
+    });
+    $(".button-recommend-2").click(function() {
+      $(".print-recommend-2").text(""); // clears text before appending
+      $(".print-recommend-2").append(restaurantRecommender.suggestedRestaurants(2, ['mexican', 'pizza'])[0].name + "<br>"); // appending may be redundant but worry about this later
+      $(".print-recommend-2").append(restaurantRecommender.suggestedRestaurants(2, ['mexican', 'pizza'])[1].name + "<br>");
+      $(".print-recommend-2").append(restaurantRecommender.suggestedRestaurants(2, ['mexican', 'pizza'])[2].name + "<br>");
     });
 });
 */
 
-module.exports = RestaurantRecommender;
+module.exports = RestaurantRecommender; // to get Jasmine to work
